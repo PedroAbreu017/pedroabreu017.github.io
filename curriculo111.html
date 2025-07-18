@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Analista de Sistemas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            padding: 10px;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: none;
+            border-radius: 0;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85em;
+        }
+        
+        .main-content {
+            padding: 20px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            color: #667eea;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .profile-text {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .item-subtitle {
+            font-weight: 500;
+            color: #667eea;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+        }
+        
+        .item-date {
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .item-description {
+            color: #555;
+            line-height: 1.4;
+            font-size: 0.9em;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-top: 2px solid #667eea;
+        }
+        
+        .skill-category h4 {
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+        
+        .projects-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #764ba2;
+        }
+        
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+        
+        .language-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .language-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.9em;
+        }
+        
+        .language-level {
+            color: #667eea;
+            font-size: 0.8em;
+            margin-top: 3px;
+        }
+        
+        .bullet-point {
+            margin-bottom: 4px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.85em;
+        }
+        
+        .bullet-point::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #5a6fd8;
+            text-decoration: underline;
+        }
+        
+        a:visited {
+            color: #667eea;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Pedro Lucas Marschausen de Abreu</h1>
+            <div class="subtitle">Desenvolvedor Full Stack | Java | JavaScript | React | Spring Boot | Node.js</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>pedroabreu6497@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+55 21 97676-7283</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Rio de Janeiro, RJ</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span><a href="https://linkedin.com/in/pedro-marschhausen-2756891b3" target="_blank">https://linkedin.com/in/pedro-marschhausen-2756891b3</a></span>
+                </div>
+                <div class="contact-item">
+                    <span>🐙</span>
+                    <span><a href="https://github.com/PedroAbreu017" target="_blank">https://github.com/PedroAbreu017</a></span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">Perfil Profissional</h2>
+                <p class="profile-text">
+                    Desenvolvedor Full Stack em formação com experiência prática em Java, JavaScript, Node.js, React e desenvolvimento mobile. Autodidata com conhecimento sólido em desenvolvimento web e mobile, tendo construído aplicações completas utilizando Spring Boot, .NET e bancos de dados relacionais e NoSQL. Experiência com arquiteturas modernas incluindo RESTful APIs, Clean Architecture e padrões SOLID. Conhecimento em DevOps com Docker, Git e ferramentas de IA para otimização do desenvolvimento. Experiência com atendimento ao cliente em empresa familiar desde jovem. Busco primeira oportunidade profissional para aplicar competências técnicas e interpessoais em desenvolvimento de software.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Formação Acadêmica</h2>
+                <div class="education-item">
+                    <div class="item-title">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
+                    <div class="item-subtitle">Universidade Estácio de Sá</div>
+                    <div class="item-date">Previsão de conclusão: 2025</div>
+                    <div class="item-description">
+                        Formação focada em desenvolvimento de software, análise de requisitos, modelagem de sistemas, banco de dados, engenharia de software e metodologias ágeis. Participação ativa em projetos acadêmicos envolvendo desenvolvimento web e mobile.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Competências Técnicas</h2>
+                <div class="education-item">
+                    <div class="item-description">
+                        <strong>Linguagens:</strong> Java 17, JavaScript/Node.js, C# 12, Python, C/C++, SQL<br>
+                        <strong>Frameworks Web:</strong> Spring Boot 3, Express.js, React.js, .NET 8, Flask<br>
+                        <strong>Banco de Dados:</strong> MongoDB, Redis, Azure SQL, MySQL, PostgreSQL<br>
+                        <strong>DevOps & Infraestrutura:</strong> Docker, Kubernetes, Linux, Git, CI/CD<br>
+                        <strong>Arquitetura & Padrões:</strong> RESTful APIs, Clean Architecture, Multi-tenant, Microservices, SOLID
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Projetos de Desenvolvimento</h2>
+                <div class="projects-item">
+                    <div class="item-title">Help Desk System</div>
+                    <div class="item-subtitle">Sistema Web Completo de Gerenciamento de Tickets</div>
+                    <div class="item-date">2024</div>
+                    <div class="item-description">
+                        Sistema web full-stack para gerenciamento de tickets de suporte técnico. Desenvolvido com Node.js, Express e interface responsiva. Implementa dashboard com métricas em tempo real, autenticação de usuários e CRUD completo. Demonstra competências em desenvolvimento full-stack e integração frontend-backend. <strong>Demo online:</strong> <a href="https://help-desk-system-sj6b.onrender.com/" target="_blank">help-desk-system-sj6b.onrender.com</a>
+                    </div>
+                </div>
+                <div class="projects-item">
+                    <div class="item-title">API Finance</div>
+                    <div class="item-subtitle">Sistema Backend Financeiro com Documentação Interativa</div>
+                    <div class="item-date">2024</div>
+                    <div class="item-description">
+                        API REST para operações financeiras desenvolvida em Java 17 e Spring Boot 3. Implementa autenticação JWT, operações CRUD e documentação Swagger automatizada. Aplicação de Clean Architecture e padrões SOLID. Demonstra conhecimentos em desenvolvimento backend enterprise. <strong>Swagger UI:</strong> <a href="https://api-finance-s8rh.onrender.com/swagger-ui/index.html" target="_blank">api-finance-s8rh.onrender.com/swagger-ui</a>
+                    </div>
+                </div>
+                <div class="projects-item">
+                    <div class="item-title">IT Inventory Management System</div>
+                    <div class="item-subtitle">Sistema de Gestão em .NET</div>
+                    <div class="item-date">2024</div>
+                    <div class="item-description">
+                        Aplicação console em .NET 8/C# 12 para estudo de padrões de desenvolvimento enterprise. Implementa gerenciamento básico de inventário com Clean Architecture e persistência JSON. Projeto focado em aprender boas práticas de programação orientada a objetos e padrões como SOLID e Dependency Injection.
+                    </div>
+                </div>
+                <div class="projects-item">
+                    <div class="item-title">Sistema de Gerenciamento de Biblioteca</div>
+                    <div class="item-subtitle">Projeto Integrador - Faculdade</div>
+                    <div class="item-date">2024</div>
+                    <div class="item-description">
+                        Projeto acadêmico desenvolvido em Java 17, Spring Boot 3, MySQL e React Native. Implementação de CRUD completo, controle de empréstimos e relatórios básicos. Primeiro contato prático com desenvolvimento full-stack e integração frontend-backend, consolidando conhecimentos da graduação.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Estudos Complementares</h2>
+                <div class="education-item">
+                    <div class="item-description">
+                        <strong>Segurança de Sistemas e DevOps (2024):</strong> Conhecimentos em segurança de containers, monitoramento Linux, Docker e Kubernetes<br>
+                        <strong>Arquitetura Enterprise (2024):</strong> Estudos em sistemas multi-tenant, microservices e integração de APIs
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Experiência Profissional</h2>
+                <div class="experience-item">
+                    <div class="item-title">Desenvolvedor Full Stack - Projetos Independentes</div>
+                    <div class="item-subtitle">Desenvolvimento Autodidata</div>
+                    <div class="item-date">2024 - Presente</div>
+                    <div class="item-description">
+                        <div class="bullet-point">Desenvolveu aplicações web completas utilizando Java Spring Boot, Node.js, React e .NET</div>
+                        <div class="bullet-point">Implementou APIs RESTful com autenticação JWT, reduzindo tempo de desenvolvimento em 30%</div>
+                        <div class="bullet-point">Criou sistema Help Desk com dashboard em tempo real e gerenciamento de tickets</div>
+                        <div class="bullet-point">Aplicou Clean Architecture e padrões SOLID em projetos com documentação Swagger</div>
+                        <div class="bullet-point">Tecnologias: Java 17, Spring Boot 3, Node.js, React, MongoDB, MySQL, Docker</div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-title">Assistente em Empresa Familiar</div>
+                    <div class="item-subtitle">Desde jovem - Presente</div>
+                    <div class="item-date"></div>
+                    <div class="item-description">
+                        <div class="bullet-point">Atendimento direto ao cliente e resolução de demandas</div>
+                        <div class="bullet-point">Criação e gerenciamento de redes sociais da empresa (Instagram, marketing digital)</div>
+                        <div class="bullet-point">Suporte em ferramentas digitais e sistemas básicos</div>
+                        <div class="bullet-point">Desenvolveu competências em comunicação, adaptabilidade e trabalho em equipe</div>
+                        <div class="bullet-point">Experiência em ambiente dinâmico de pequena empresa</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Certificações & Cursos</h2>
+                <div class="education-item">
+                    <div class="item-description">
+                        <strong>Alura - Escola Online de Tecnologia (2024):</strong><br>
+                        • Formação Java: Spring Boot, JPA, APIs REST e orientação a objetos<br>
+                        • Formação JavaScript Backend: Node.js, Express.js, APIs RESTful e MongoDB<br>
+                        • Formação Node.js: Desenvolvimento web, middlewares, autenticação e deploy
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Idiomas</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <div class="language-name">Português</div>
+                        <div class="language-level">Nativo</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Inglês</div>
+                        <div class="language-level">Intermediário</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Espanhol</div>
+                        <div class="language-level">Básico</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
